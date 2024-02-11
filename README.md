@@ -2,4 +2,4 @@
 
 ## 用法
 
-> ./aliyun_auto_sign -t <token>
+> ./aliyun_auto_sign -t `<token>`
