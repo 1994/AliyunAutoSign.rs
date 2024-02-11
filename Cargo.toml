@@ -1,0 +1,20 @@
+[package]
+name = "aliyun_auto_sign"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+reqwest = {version = "0.11.23",  features = ["blocking", "json"]}
+anyhow = "1.0.79"
+serde = { version = "1.0", features = ["derive"] }
+clap = { version = "4.4.13", features = ["derive"] }
+serde_json = "1.0.113"
+openssl = { version = "0.10", features = ["vendored"] }
+
+[profile.release]
+opt-level = "z"
+debug = false
+lto = true
+panic = 'abort'
