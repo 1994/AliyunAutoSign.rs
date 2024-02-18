@@ -8,7 +8,7 @@ const TOKEN_URL: &str = "https://auth.aliyundrive.com/v2/account/token";
 const SIGN_URL: &str = "https://member.aliyundrive.com/v1/activity/sign_in_list";
 const SIGN_REWARD_URL: &str = "https://member.aliyundrive.com/v1/activity/sign_in_reward";
 
-fn get_client() -> &'static Client {
+pub fn get_client() -> &'static Client {
     static INSTANCE: OnceLock<Client> = OnceLock::new();
     INSTANCE.get_or_init(Client::new)
 }
